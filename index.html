@@ -17,17 +17,26 @@
             <div class="col-6 bg-light rounded mt-5 p-5">
                 <div class="form-group">
                     <label for="exampleInputMovie">Search for a movie!</label>
-                    <input type="text" class="form-control" id="search" placeholder="Enter movie title">
+                    <input type="text" class="form-control" id="search" placeholder="Enter movie title"
+                        onkeypress="return pressEnter(event)">
                     <small id="movieHelp" class="form-text text-muted">..and click on submit :)</small>
                 </div>
-                <button class="btn btn-warning" onclick="getMovies()">Submit</button>
+                <button class="btn btn-danger" id="submit-btn" onclick="getMovies()">Submit</button>
             </div>
         </div>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center d-none" id="movies-row">
             <div class="col-6 bg-light rounded mt-5 p-5">
                 <p id="movie-total"></p>
-                <ul class="list-group list-group-flush" id="movie-list">
+                <p id="sad-face">:(</p>
+                <ul class="list-group list-group-flush align-items-center text-center" id="movie-list">
                 </ul>
+                <nav class="mt-5">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item d-none"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item"><a class="page-link">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
